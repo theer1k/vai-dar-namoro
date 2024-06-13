@@ -1,0 +1,150 @@
+main {
+  background: #000000;
+  color: white;
+  font-family: sans-serif;
+  height: 100%;
+  left: 0;
+  padding: 10px;
+  position: fixed;
+  text-align: center;
+  top: 0;
+  width: 100%;
+}
+
+main::after {
+  content: "";
+  z-index: -1;
+  opacity: 0;
+  width: inherit;
+  height: inherit;
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* TRANSISITION */
+  transition: opacity 1s ease-in-out;
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  background-image: url("./images/Banner_Vai_dar_Namoro.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+main.active::after {
+  opacity: 1;
+}
+
+section {
+  margin: auto;
+  width: 200px;
+}
+
+.btn {
+  background: red;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 10px;
+  width: 80px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-left: 1rem;
+}
+
+.btn:active {
+  opacity: 0.8;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+.btn.btn-yes {
+  display: block;
+  position: fixed;
+}
+
+.btn.btn-no {
+  position: absolute;
+}
+
+/* Coração pulsante */
+
+.loading-heart {
+  display: block;
+  position: relative;
+  width: 60px;
+  height: 60px;
+  margin: auto auto 30px auto;
+  transform: rotate(45deg);
+  transform-origin: 40px 40px;
+}
+
+.loading-heart span {
+  top: 32px;
+  left: 32px;
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  background: red;
+  animation: loading-heart 1.2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.loading-heart span:after,
+.loading-heart span:before {
+  content: " ";
+  position: absolute;
+  display: block;
+  width: 32px;
+  height: 32px;
+  background: red;
+}
+
+.loading-heart span:before {
+  left: -24px;
+  border-radius: 50% 0 0 50%;
+}
+
+.loading-heart span:after {
+  top: -24px;
+  border-radius: 50% 50% 0 0;
+}
+@keyframes loading-heart {
+  0% {
+    transform: scale(0.95);
+  }
+  5% {
+    transform: scale(1.1);
+  }
+  39% {
+    transform: scale(0.85);
+  }
+  45% {
+    transform: scale(1);
+  }
+  60% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(0.9);
+  }
+}
+
+.content {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  transform: translate(-50%, 10%);
+  left: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  background: rgba(0, 0, 0, 0.8);
+  padding: 1rem;
+  width: fit-content;
+}
